@@ -101,27 +101,42 @@ const UserMenu: React.FC<UserMenuProps> = ({
                     {currentUser ? (
                         <>
                             <MenuItem 
-                                onClick={() => router.push('/trips')}
+                                onClick={() => {
+                                    router.push('/trips');
+                                    toggleOpen();
+                                }}
                                 label="My trips"
                             />
                             <MenuItem 
-                                onClick={() => {}}
+                                onClick={() => {
+                                    toggleOpen();
+                                }}
                                 label="My favorites"
                             />
                             <MenuItem 
-                                onClick={() => {}}
+                                onClick={() => {
+                                    router.push('/reservations'); toggleOpen();
+                                }}
                                 label="My reservations"
                             />
                             <MenuItem 
-                                onClick={() => {}}
+                                onClick={() => {
+                                    toggleOpen();
+                                }}
                                 label="My properties"
                             />
                             <MenuItem 
-                                onClick={rentModal.onOpen}
+                                onClick={() => {
+                                    rentModal.onOpen();
+                                    toggleOpen();
+                                }}
                                 label="Airbnb my home"
                             />
                             <MenuItem 
-                                onClick={() => signOut()}
+                                onClick={() => {
+                                    signOut();
+                                    toggleOpen();
+                                }}
                                 label="Logout"
                             />
                         </>
