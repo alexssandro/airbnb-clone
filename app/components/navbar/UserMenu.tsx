@@ -109,6 +109,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                             />
                             <MenuItem 
                                 onClick={() => {
+                                    router.push('/favorites');
                                     toggleOpen();
                                 }}
                                 label="My favorites"
